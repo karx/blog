@@ -1,0 +1,41 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+// Common style for category links
+@mixin category-link {
+    @include font-size-level6;
+    @include transition(color 75ms ease-out, background-color 75ms ease-out);
+    background: #eee;
+    border: 1px solid rgba(0, 0, 0, .05);
+    color: $color-text-secondary;
+    display: inline-block;
+    margin: 0 5px .25em 0;
+    padding: .15em 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($color-link, 10%);
+        background: #e3e3e3;
+    }
+}
+
+
+// Narrower width for singular pages
+@mixin single-size {
+    @include border-box;
+    margin: 0 auto;
+    max-width: $width-desktop - 40px;
+
+    @media #{$mq-phone-wide} {
+        padding: 0 20px;
+    }
+
+    @media #{$mq-tablet} {
+        padding: 0 60px;
+    }
+}
